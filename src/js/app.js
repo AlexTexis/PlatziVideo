@@ -2,10 +2,12 @@ const animationContainer = document.getElementById('animationContainer');
 const musicalContainer = document.getElementById('musicalContainer');
 const videoInfContainer = document.getElementById('videoInfo');
 const topInfContainer = document.getElementById('topContainer');
+const sugestionContainer = document.getElementById('moviesSugestions');
 const overlay = document.getElementById('overlay');
 const modal = document.getElementById('modal');
 const form = document.getElementById('formSearch');
 const Url = 'https://yts.am/api/v2/list_movies.json';
+const UrlSugestion = 'https://yts.am/api/v2/movie_suggestions.json?';
 
 async function load()
 {
@@ -78,12 +80,12 @@ async function load()
 		})
 	}
 
-	function renderTopMovies(arrayColection)
+	function renderTopMovies(arrayColection,container)
 	{
-		topContainer.children[0].remove();
+		container.children[0].remove();
 		arrayColection.forEach((itemColection) =>{
 			const tagHtml = createTemplateTop(itemColection);
-			topContainer.append(tagHtml);
+			container.append(tagHtml);
 		})
 	}
 
@@ -141,15 +143,28 @@ async function load()
 		return data;
 	}
 
-	const top = await sendData(`${Url}?minimum_rating=9`);
-	renderTopMovies(top);
+	async function cacheExist(category,parametro)
+	{
+		const listCache = window.localStorage.getItem(category);//obtener local storage
 
-	const animation = await sendData(`${Url}?genre=animation`);
-	renderTemplateCategory(animation,animationContainer);
+		if(listCache) return JSON.parse(listCache); //si hay cache devuelvela
 
-	const musical = await sendData(`${Url}?genre=musical`);
-	renderTemplateCategory(musical,musicalContainer);
+		const data = await sendData(`${Url}?${parametro}`); //si no hay cache hacemos la consulta al servidor
+		window.localStorage.setItem(category,JSON.stringify(data));
+	  return data;
+	}
 
+	const topData = await cacheExist('topMovies','minimum_rating=9'); 
+	renderTopMovies(topData,topContainer);
+
+	const MoviesSugestions = await sendData('https://yts.am/api/v2/movie_suggestions.json?movie_id=10');
+	renderTopMovies(MoviesSugestions,sugestionContainer)
+
+	const animationData = await cacheExist('animation','genre=animation');
+	renderTemplateCategory(animationData,animationContainer);
+
+	const musicalData = await cacheExist('musical','genre=musical');
+	renderTemplateCategory(musicalData,musicalContainer);
 
 }
 

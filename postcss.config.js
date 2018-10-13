@@ -9,6 +9,7 @@ module.exports = {
 				},
 				customProperties:false
 			}
-		})
+		}),
+		require('cssnano')
 	]
 }
