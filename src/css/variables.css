@@ -1,0 +1,40 @@
+body{
+	margin:0;
+	font-family: 'Montserrat',san-serif;
+}
+*{
+	box-sizing:border-box;
+} 
+
+:root{
+	--colorSidebar:#171B2E;
+	--colorHeader:#10171E;
+	--colorOneInf:#cc0099;
+	--colorSecondInf:#ff6699;
+	--colorWhite:#fff;
+	--colorBlueRey:#007ACC;
+	--colorRedPink:#FF334C;
+	--colorContenido:#fafafa;
+	--colorPurple:#865FC5;
+	--colorWhiteTrans:rgba(256,256,256,0.6);
+	--anclaHover:rgba(256,256,256,0.2);
+	--font:'Montserrat',san-serif;
+	--labelPlaylist:{
+		color:var(--colorWhite);
+		font-size: 1.3em;
+		text-align: center;
+	};
+	--boton:{
+		font-family:'Montserrat';
+		color:var(--colorWhite);
+		background-color: var(--colorPurple);
+		padding: .8em 2em;
+		border:none;
+		cursor: pointer;
+		outline: 0;
+	}
+	--colorVideoInf:{
+		background:linear-gradient(to right, var(--colorOneInf) 0%, var(--colorSecondInf) 100%);
+	};
+}
+

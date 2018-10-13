@@ -1,0 +1,67 @@
+/*sidebar-start*/
+
+.sidebar{
+position: fixed;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+width: 300px;
+grid-area: sidebar;
+background-color:var(--colorSidebar);
+display:grid;
+grid-template:55px 1fr 1fr / 1fr;
+grid-gap:.5em;
+}
+
+.logo-img{
+	width: 100%;
+}
+
+.logo-img img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.myMovies,.topMovies{
+	display: grid;
+	grid-template-rows: 40px 1fr;
+	overflow: hidden;
+}
+
+.playlist-label{
+	@apply --labelPlaylist;
+	margin:0;
+	line-height: 40px;
+}
+
+.playlist-items{
+	overflow: auto;
+}
+
+.playlist-items::-webkit-scrollbar{
+	width: 8px;
+	background-color: var(--colorSidebar);
+}
+
+.playlist-items::-webkit-scrollbar-thumb{
+	background-color: var(--colorBlueRey);
+	border-radius: 3px;
+}
+
+.playlist-items a{
+	color: var(--colorWhiteTrans);
+	text-decoration: none;
+	display: block;
+	padding: .6em 1em;
+	text-align: center;
+	transition: .4s;
+	will-change:transform;
+}
+
+.playlist-items a:hover{
+	background-color: var(--anclaHover);
+}
+
+/*sidebar-end*/

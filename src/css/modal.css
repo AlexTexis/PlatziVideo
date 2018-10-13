@@ -1,0 +1,89 @@
+/*modal estart*/
+.overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right:0;
+	bottom: 0;
+	background-color:rgba(0,0,0,.5);
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: .3s;
+}	
+
+.modal{
+	background-color:var(--colorWhite);
+	width: 600px;
+	text-align: center;
+	padding: 1em;
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.showOverlay{
+	visibility: visible;
+	opacity: 1;
+}
+
+@keyframes modalIn{
+	0%{
+	transform: translateY(-800px);
+	}
+	
+	25%{
+		transform: translateY(0);
+	}
+
+  40%{
+  	transform: translateY(-10px);
+  }
+
+  50%{
+  	transform: translateY(0);
+  }
+	100%{
+	transform: translateY(0);
+	}
+}
+@keyframes modalOut{
+	0%{
+	transform: translateY(0);
+	}
+	
+	20%{
+		transform: translateY(10px);
+	}
+
+  50%{
+  	transform: translateY(-800px);
+  }
+
+	100%{
+	transform: translateY(-800px);
+	}
+}
+
+.modalIn{
+	animation-name: modalIn;
+	animation-duration:2s;
+	will-change:transform;
+}
+.modalOut{
+	animation-name: modalOut;
+	animation-duration:2s;
+	will-change:transform;
+}
+
+.close-modal{
+	display: block;
+	margin: 0 auto;
+	@apply --boton;
+}
+/*modal end*/

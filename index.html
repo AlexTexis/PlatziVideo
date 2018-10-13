@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>PlatziVideo</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="dist/css/app.css">
+</head>
+<body>
+	<div class="platziVideo">	
+	<header class="header">
+		<form id="formSearch" class="form-search" action="" autocomplete="off">
+			<input id="search"  class="search" name="busca" type="text" placeholder="Busca tus pelicula o series favoritas">
+		</form>
+		<div class="userName">
+		<span>AlexDeveloper</span>
+		<picture class="user-img"><img src="assets/platzi-video.png" alt=""></picture>		
+		</div>
+	</header>
+	<section class="sidebar">
+		<picture class="logo-img"><img src="assets/platzi-video.png" alt=""></picture>
+		<div class="myMovies">
+			<h3 class="playlist-label">My Playlists</h3>
+			<div class="playlist-items">
+				<a href="">itemMovie</a>
+				<a href="">itemMovie</a>
+				<a href="">itemMovie</a>
+				<a href="">itemMovie</a>
+				<a href="">itemMovie</a>
+				<a href="">itemMovie</a>
+				<a href="">itemMovie</a>
+				<a href="">itemMovie</a>
+				<a href="">itemMovie</a>
+				<a href="">itemMovie</a>
+				<a href="">itemMovie</a>
+				<a href="">itemMovie</a>
+			</div>
+		</div>
+		<div class="topMovies">
+			<h3 class="playlist-label">Top Movies</h3>
+			<div class="playlist-items" id="topContainer">
+				<a href="#">loading...</a>
+			<!-- 	<a href="">item</a>
+				<a href="">item</a>
+				<a href="">item</a>
+				<a href="">item</a> -->
+			</div>
+		</div>
+	</section>
+	<section class="contenido">
+		<div class="drama section-content">
+			<h4 class="title-section">Genero Animacion</h4>
+			<div class="itemsMovie" id="animationContainer">	
+			<!--  <article class="itemMovie">
+			 	<picture class="movie-cover"><img src="assets/platzi-video.png" alt=""></picture>
+				<h4 class="title-movie">Titulo</h4>
+			 </article> -->
+				<p id="loader">loading....</p>
+			</div>
+		</div>
+		<div class="comedy section-content">
+			<h4 class="title-section">Genero Musical</h4>
+			<div class="itemsMovie" id="musicalContainer">
+				<div id="loader">loading....</div>
+				<!-- <article class="itemMovie">
+			 	<picture class="movie-cover"><img src="assets/platzi-video.png" alt=""></picture>
+				<h4 class="title-movie">Titulo</h4>
+			 </article> -->
+			</div>
+		</div>
+	</section>
+	<section class="video-info" id="videoInfo">
+			<!-- <picture><img width="40" src="" alt=""></picture>
+			<h3 class="title-info">Titulo</h3> -->
+	</section>
+
+	<div class="overlay" id="overlay">
+		<div class="modal" id="modal">
+			<h3>titulo de movie</h3>
+			<picture><img src="" width="200" alt=""></picture>
+			<span>Descripcion:</span>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima culpa quaerat iure accusantium sed ullam! Alias minima, dicta reiciendis corporis iure, ut. Illum quod cum asperiores officiis quaerat quis repudiandae?</p>
+			<button class="close-modal" id="close-modal">Cerrar</button>
+		</div>
+	</div>
+
+	<script src="src/js/app.js"></script>
+	</div>
+</body>
+</html>

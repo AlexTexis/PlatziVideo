@@ -1,0 +1,66 @@
+/*header-start*/
+.platziVideo{
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 300px 1fr;
+	grid-template-rows: 55px 1fr 120px;
+	grid-template-areas: "sidebar header"
+												"sidebar contenido"
+												"sidebar info";
+	position: relative;
+}
+
+.header{
+position: fixed;
+top: 0;
+left: 300px;
+right: 0;
+height:55px; 
+grid-area: header;
+background-color:var(--colorHeader);
+color: #fff;
+display: grid;
+grid-template-columns: 1fr 270px;
+z-index: 3;
+}
+
+.form-search,.userName{
+	height: inherit;
+}
+
+.form-search{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.search{
+	border:3px solid var(--colorBlueRey);
+	background-color: var(--colorHeader);
+	color: var(--colorWhite);
+	padding: .5em 1em;
+	border-radius:20px;
+	outline:0;
+	width: 60%;
+	font-family: var(--font);
+}
+
+.user-img{
+	margin-left: 10px;
+}
+
+.user-img img{
+	width: 35px;
+	height: 35px;
+	object-fit: cover;
+	border-radius: 50%;
+	border:2px solid var(--colorWhite);
+}
+
+.userName	{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 0 1em;
+}
+/*header-end*/
